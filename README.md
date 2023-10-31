@@ -193,7 +193,7 @@ To access Airflow and MLFlow, run the following commands:
 
 `docker-compose up -d`
 
-In your browser, you will have access to the 3 services:
+In your browser, you will have access to the 2 services:
 - **airflow** at the address **localhost:8080**
 - **mlflow** at the address **localhost:5001**
 
