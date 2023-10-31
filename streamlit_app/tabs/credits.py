@@ -62,6 +62,7 @@ def run():
      col1.markdown('**Project mentor:**')
         
      col2.markdown('Vincent Ly')
+     col3.markdown('Alban Thuet')
      
      st.markdown('')
      st.markdown('')
