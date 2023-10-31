@@ -160,9 +160,12 @@ The application uses Amazon AWS cloud services, including :
 - RDS : For the MySQL database
 - S3 : To store various models, metrics, label encoders fitted to training data, and Min/Max scalers fitted to training data.
 
-**Airflow :**
+**Airflow / MLflow :**
 
-The admin has access to the Airflow interface, where DAGs allow regular model evaluation and training on new data.
+Airflow is a tool designed to automate tasks, and we leverage it to automatically load new data, retrain various models, and subsequently export the best model to be reused in the API. Additionally, we use MLflow to gain deeper insights and more detailed tracking of model metrics and outcomes based on their parameters. Both services can be accessed through browser interfaces.
+
+The automation script for Airflow is called a DAG and is located in the 'dag' folder of the 'airflow' directory.
+We provide further details on the implementation of these services below.
 
 **Streamlit :**
 
@@ -186,7 +189,13 @@ To access Airflow and MLFlow, run the following commands:
 
 `cd airflow`
 
+`echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env`
+
 `docker-compose up -d`
+
+In your browser, you will have access to the 3 services:
+- **airflow** at the address **localhost:8080**
+- **mlflow** at the address **localhost:5001**
 
 ------------
 

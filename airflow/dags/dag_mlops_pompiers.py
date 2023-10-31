@@ -192,23 +192,15 @@ def train_and_evaluate_models(ti, **kwargs):
 
     model_hyperparameters = {
     "LinearRegression": [],
-    "SGDR": ["alpha", "loss", "penalty", "learning_rate"],
     "BR": ["alpha_1", "alpha_2", "lambda_1", "lambda_2"],
     "OMP": ["n_nonzero_coefs", "tol"],
     "Lars": ["n_nonzero_coefs", "fit_intercept"],
-    "Elasticnet": ["alpha", "l1_ratio"],
     "Lasso": ["alpha"],
     "Ridge": ["alpha"]
     }
 
     default_hyperparameters = {
     "LinearRegression": {},
-    "SGDR": {
-        "alpha": 1.0,
-        "loss": "squared_error",
-        "penalty": "l2",
-        "learning_rate": "invscaling"
-    },
     "BR": {
         "alpha_1": 1e-6,
         "alpha_2": 1e-6,
@@ -220,10 +212,6 @@ def train_and_evaluate_models(ti, **kwargs):
         "tol": 1e-3
     },
     "Lars": {},
-    "Elasticnet": {
-        "alpha": 1.0,
-        "l1_ratio": 0.5
-    },
     "Lasso": {
         "alpha": 1.0
     },
@@ -236,11 +224,9 @@ def train_and_evaluate_models(ti, **kwargs):
     # Classes des modèles
     model_classes = {
     "LinearRegression": LinearRegression,
-    "SGDR": SGDRegressor,
     "BR": BayesianRidge,
     "OMP": OrthogonalMatchingPursuit,
     "Lars": Lars,
-    "Elasticnet": ElasticNet,
     "Lasso": Lasso,
     "Ridge": Ridge
     }
