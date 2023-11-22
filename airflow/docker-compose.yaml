@@ -42,7 +42,7 @@
 #                                as described in https://airflow.apache.org/docs/docker-stack/build.html.
 #                                Default: ''
 #
-# Feel free to modify this file to suit your needs.
+
 ---
 version: '3.8'
 x-airflow-common:
