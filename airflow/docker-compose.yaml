@@ -40,8 +40,7 @@
 #                                startup is done EVERY TIME the service is started.
 #                                A better way is to build a custom image or extend the official image
 #                                as described in https://airflow.apache.org/docs/docker-stack/build.html.
-#                                Default: ''
-#
+
 
 ---
 version: '3.8'
